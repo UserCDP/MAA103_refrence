@@ -1,0 +1,108 @@
+\section{Probability theory on finite sets}
+        \subsection{The state space}
+            \subsubsection{Definition}
+                The set of all possible outcomes of a random experiment is called the \textbf{state space (or the universe or the canonical set)}. It is usually denoted by $\Omega$. The elements of $\Omega$ are called \textbf{realizations}.
+
+                \vspace{5pt}
+
+                $\bigstar$ the state space depends on the whole experiment
+
+        \subsection{Events}
+            \subsubsection{Definition}
+                $\bullet$ An event A of the state space $\Omega$ is a subset $A \subset \Omega$ (or $A\in\mathcal{P}(\Omega)$).
+
+                \noindent$\bullet$ An event that contains only one element is called an elementary event.
+
+            \subsubsection{Definition}
+                Let $\Omega$ be a state space and let $A \subset \Omega$ be an event. An experiment determines an element $\omega \in \Omega$. If $\omega\in A$ we say that $A$ is realized, while it is not realized if $\omega \notin A$.
+
+            \subsubsection{Remark}
+                $\bullet$ the event $\varnothing$ is called the impossible event (we never have $\omega \in \varnothing$)
+
+                \noindent$\bullet$ the event $\Omega$ is called \textbf{certain}
+
+                \noindent$\bullet$ if $A \subset\Omega$ is an event, then $\overline{A}=\Omega\setminus A$ is the complementary event of $A$
+
+            \subsection{Definition}
+                Let $A,B\in\mathcal{P}(\Omega)$ be two events.
+
+                $\bullet$ $A\cup B$ is called \textit{"A or B"}
+
+                $\bullet$ $A \cap B$ is called \textit{"A and B"}
+
+                $\bullet$ if $A \subset B$ then \textit{"A implies B"}
+
+                $\bullet$ if $A\cap B=\varnothing$, then $A$ and $B$ are said incompatible
+
+        \subsection{Probabilities}
+            \subsubsection{Definition}
+                Let $\Omega$ be a state space. A probability is a function 
+
+                \vspace{5pt}
+                $\begin{array}{cc}
+                    \mathbb{P}:&\mathcal{P}\rightarrow [0,1] \\
+                    &A \mapsto \mathbb{P}(A)
+                \end{array}$
+                such that
+                \vspace{5pt}
+
+                (1) $\mathbb{P}(\Omega)=1$
+                
+                (2) $\forall A,B \in \mathcal{P}$ with $A\cap B = \varnothing$, $\mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B)$
+
+                We then say that $(\Omega, \mathbb{P})$ is a probability space.
+
+                \vspace{5pt}
+
+                \noindent$\bigstar$ this definition holds only for finite (or at least countable) state spaces $\Omega$
+
+            \subsubsection{Definition}
+                Let $\Omega$ be a state space. The uniform probability on $\Omega$ is defined by
+
+                \vspace{5pt}
+                
+                \centerline{$\mathbb{P}_u(A)=\frac{\#A}{\#\Omega}$, for all $A\subset\Omega$.}
+
+        \subsection{Computing probability}
+            From now on, $(\Omega, \mathbb{P})$ is a probability space.
+
+            \subsubsection{Prop}
+                $\forall A \subset \Omega, \mathbb{P}(\overline{A})=1-\mathbb{P}(A)$.
+                
+            \subsubsection{Prop}
+            If $A \subset B$ are two events, then $\mathbb{P}(A) \leq \mathbb{P}(B)$.
+
+            \subsubsection{Theorem}
+            Let $A_1,...,A_n \subset \Omega$, n events such that $A_i\cap A_j=\varnothing$ for $i\neq j$, then
+
+                \vspace{5pt}
+
+                \centerline{$\mathbb{P}(A_1\cup...\cup A_n)=\displaystyle\sum_{k=1}^n \mathbb{P}(A_k)$.}
+                
+            \subsubsection{Theorem}
+                Let $A,B \subset \Omega$ be two events. Then
+
+                \vspace{5pt}
+
+                \centerline{$\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$.}
+
+        \subsection{Constructiong probabilities}
+            Let $(\Omega, \mathbb{P})$ be a finite probability space, $\Omega=\{\omega_1,...,\omega_n\}$ and let $p_k=\mathbb{P}(\{\omega_k\})$, for $k=1,...,n$. Then $p_k\in[0,1]$ and $\sum_{k=1}^n p_k=\mathbb{P}(\Omega)=1$ \\ since $\Omega=\{\omega_1\}\cup...\cup\{\omega\}$.
+
+            \vspace{14pt}
+
+            
+            \noindent Conversely we have:
+            \vspace{-14pt}
+            \subsubsection{Theorem}
+                Let $\Omega=\{\omega_1,...,\omega_n\}$ and let $(p_k)_{1\leq k < n}$ such that $p_k\in[0,1]$ and $\displaystyle\sum_{k=1}^n p_k=1$; then the function $\mathbb{P}$ defined on $\mathcal{P}(\Omega)$ by $\mathbb{P}=\displaystyle\sum_{k/\omega_k\in A} p_k = \sum_{k=1}^n p_k \mathds{1}_A (\omega_k)$ is a probability on $\Omega$.
+
+                recall that $
+                    \mathds{1}_A=\begin{cases}
+                        1 \: if \: x \in A \\
+                        0 \: if \: x \notin A
+                        \end{cases}
+                $
+
+            \subsubsection{Remark}
+            This means that a probability $\mathbb{P}$ on $\Omega$ is entirely determined by the probability of the elementary events.

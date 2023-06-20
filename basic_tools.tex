@@ -1,0 +1,52 @@
+\section{Basic tools}
+		\subsection{Basic cardinality}
+			\textbf{Notation:} A is a finite set; \#A denotes its number of elements (cardinality).
+			\subsubsection{Rule of sum} Let $A_1, ..., A_n$ be n finite sets with $A_i \cap A_j =$ \o if $i \neq j$ for $1 \leq i,j \leq n.$ Then
+
+                \vspace{5pt}
+				\centerline{$\#(\bigcup_{i=1}^{n}A_i)=\sum_{i=1}^{n}\#A_i$}
+				
+			\subsubsection{Rule of product} Let $E_1,...,E_k$ be k finite sets, then
+
+                \vspace{5pt}
+				\centerline{$\#E_1\times E_2\times ... \times E_k=\prod_{j=1}^{k}\#E_j$}
+    
+			\subsubsection{Complement rule} Let $A \subset B$ two finite sets, then
+
+                \vspace{5pt}
+				\centerline{$\#(B \backslash A)=\#B - \#A$ where $B \backslash A=\{ x \in B, x \notin A \}$}
+		
+		\subsection{Functions and cardinality}
+			\textbf{Notations:} $f: E \rightarrow F$, E: domain of $f$; F: codomain of $f$; y=$f(x)$: image of $x$ by $f$
+			
+			\centerline{Img = $\{y \in F, \exists x\in E, y=f(x)\}$}
+			
+			\subsubsection{Definition (injective function)}
+			A function $f:E \rightarrow F$ is \textbf{one-to-one (injective)} if for all $x,y \in E$,
+   
+            \vspace{5pt}
+            \centerline{$f(x)=f(y) \Rightarrow x=y$}
+			
+			\subsubsection{Prop (Pigeonhole principle)}
+			Let $E$ and $F$ be two finite sets. If there exists a one-to-one function $E \rightarrow F$, then $\#F \geq \#E$.
+			
+			\subsubsection{Definition (surjective function)}
+			A function $f: E \rightarrow F$ is \textbf{onto (surjective)} if for all $y \in F$, $\exists x \in E$ such that $y=f(x)$, or equivalently, Imf=$F$.
+			
+			\subsubsection{Prop}
+			Let $E,F$ be finite sets; if there exists $f:E\rightarrow F$ onto, then $\# E \geq \# F$.
+			
+			\subsubsection{Definition (bijection)}
+			$f: E \rightarrow F$ is a bijection if it is both one-to-one and onto i.e. $\forall y\in F, \exists! x\in E$ such that $f(x)=y$.
+			
+			\subsubsection{Prop}
+			Suppose $E$ and $F$ are finite sets if
+			
+				$\bullet$ $\exists$ bijection $f: E \rightarrow F$, then $\#E=\#F$
+				
+				$\bullet$ $\#E=\#F$, then
+				
+				\centerline{$f$ onto $\Leftrightarrow f$ one-to-one $\Leftrightarrow f$ bijection}
+				
+			\subsubsection{Definition (countable set)}
+			A set $A$ is countable if there exists a bijection from $A$ to $\mathbf{N}$ (or equivalently from $\mathbf{N}$ to A).

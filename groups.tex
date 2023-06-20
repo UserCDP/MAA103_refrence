@@ -1,0 +1,69 @@
+\section{Groups}
+		\subsection{Definitions}
+			\subsubsection{A group}
+    			A group is a set $G$ equipped with an operation $\ast: G\times G \rightarrow G$, called the \textbf{group law}, which satisfies:
+    			
+    			$\bullet$ \textbf{Associativity}: for all $x,y,z \in G$, $x\ast(y\ast z) = (x\ast y)\ast z$.
+       
+                $\bullet$ \textbf{Existence of a neutral element}: $\exists e \in G, \forall x \in G, e \ast x = x \ast e = x$.
+                
+                $\bullet$ \textbf{Existence of inverse}: for all $x \in G, \forall y \in G$ such that $x \ast y = y \ast x = e$.
+
+                \vspace{5pt}
+                
+                $\bigstar$ If in addition the law $\ast$ is commutative, then we say that $G$ us an \textbf{Abelian group}, and the identity is unique.
+                
+			\subsubsection{Lemma}
+            Let $(G, \ast)$ a group and $g \in G$. Then the map $\phi_g: G \rightarrow G$ with $x \mapsto x \ast g$ is a bijection. In the same way, $\psi_g: x \mapsto g \ast x$ is bijective.
+
+        \subsection{Group morphisms}
+            \subsubsection{Definition}
+                Let $(G_1, \ast)$ and $(G_2, \square)$ be two groups. A \textbf{group morphism (or homomorphism of groups)} is a map $\phi : G_1 \rightarrow G_2$ compatible with the laws $\ast$ and $\square$, i.e.
+                
+                \centerline{$\forall x,y\in G_1, \phi(x\ast y) = \phi (x) \square \phi (y)$.}
+                
+		      \subsubsection{Lemma}
+                Let $\phi : G_1 \rightarrow G_2$ be a group morphism, then
+
+                $\bullet$ $\phi (e_{G_1}) = e_{G_2}$, where $e_{G_i}$ is the identity element of $G_i$
+
+                \vspace{1pt}
+
+                $\bullet$ $\forall x \in G, \phi (x^{-1}) = \phi (x)^{-1}$
+
+            \subsubsection{Lemma}
+                Let $(G_1, \ast ), (G_2, \square )$ and $(G_3, \triangle)$ be 3 groups, $f : G_1 \rightarrow G_2$ and $g : G_2 \rightarrow G_3$ be group morphisms. Then $g \circ f : G_1 \rightarrow G_3$ is a group morphism.
+
+            \subsubsection{Lemma}
+                $f: (G_1, \ast) \rightarrow (G_2, \square)$ a group morphism. Suppose f is a bijection. Then,
+
+                \vspace{2pt}
+                
+                \centerline{$f^{-1}:(G_2, \square) \rightarrow (G_1, \ast)$ is a group morphism.}
+
+            \subsubsection{Definition (isomorphism)}
+                Two groups $G_1$ and $G_2$ are isomorphic if there exists a \textbf{bijective group morphism (or isomorphism)} from $G_1$ into $G_2$.
+
+        \subsection{Subgroups}
+            \subsubsection{Definition}
+                $(G, \ast)$ a group and let $H \subset G$. Then $H$ is a subgroup of $G$ if:
+
+                    $\bullet$ The neutral element $e$ is in $H$
+
+                    $\bullet$ $\forall x,y \in H, x \ast y \in H$
+
+                    $\bullet$ $\forall x \in H, x^{-1} \in H$
+
+                    \vspace{5pt}
+
+                    $\Rightarrow$ Note that this means $\ast$ may be restricted to a group law $H \times H \rightarrow H$
+
+                    \vspace{5pt}
+
+                    $\bigstar$ If $G \neq \{e\}$, there exist at least two subgroups: $G$ and $\{e\}$.
+                    
+            \subsubsection{Lemma}\
+                $(G, \ast )$ a group and $H \subset G$; then $H$ is a subgroup $\Leftrightarrow H \neq \varnothing$ and $\forall x,y \in H, x \ast y^{-1} \in H$.
+
+            \subsubsection{Prop}
+                All subgroups of $(\mathbb{Z}, +)$ have the form $n\mathbb{Z} = \{nk, k \in \mathbb{Z}\}$ for some $n \in \mathbb{N}$.

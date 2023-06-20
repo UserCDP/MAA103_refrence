@@ -1,0 +1,140 @@
+\section{Random variables}
+        In the whole chapter, $(\Omega, \mathbb{P})$ is a finite probability space.
+
+        \subsection{Definitions}
+            \subsubsection{Definition}
+                A random variable (r.v.) is a function defined on $\Omega$ with values in a set $E$.
+
+            \subsubsection{Notation}
+                If $X: \Omega \rightarrow E$ is a random variable, then the image $X(\Omega)$ is called the support of $X$.
+
+            \vspace{6pt}
+
+            $\bigstar$ X is not a variable, but a function (every element of $\Omega$ has a unique image). The name is associated with the fact that $X(\omega)$ varies in $X(\Omega)$ according to the realization $\omega \in \Omega$.
+
+        \subsection{Probabilities notations}
+            \subsubsection{Definition}
+                Let $X: \Omega \rightarrow E$ be a r.v. If $A \subset E$, we define the event $\{x\in A\} \subset \Omega$ by $\{ X \in A \} = \{ \omega \in \Omega, X(\omega)\in A\} = X^{-1}(A)$.
+
+                \vspace{5pt}
+
+                Similarly the event $\{X=a\} \subset \Omega$ is defined, for $a \in \Omega$, as the subset of preimage of a:
+
+                \centerline{$\{X=a\}=\{\omega\in\Omega, X(\omega)=a\} = X^{-1}(\{a\})$.}
+
+            \subsubsection{Remark}
+                The goal of probabilistic notations is to write as less $\omega$ as possible.
+
+            \subsubsection{Remark}
+                We usually write $\mathbb{P}(x\in A)$ for $\mathbb{P}(\{x\in A\})$.
+
+        \vspace{30pt}
+
+        \subsection{Law of a random variable}
+            \subsubsection{Theorem-Definition}
+                Let $X:\Omega\rightarrow E$ a r.v. (E finite set). We define \begin{align*}
+                    \mathbb{P}_X: \mathcal{P}(E) & \rightarrow [0,1] \\
+                    A & \mapsto \mathbb{P}(x \in A)
+                \end{align*}
+                Then $\mathbb{P}_X$ is a probability on $E$, called the law (or distribution) of the r.v. $X$.
+
+            $\bigstar$ If $X$ is a random variable, then $\mathbb{P}_X$ is a probability on $E$, while for an event $B \subset \Omega, \mathbb{P}_B=\mathbb{P}(\cdot | B)$ is a probability on $\Omega$.
+
+            \subsubsection{Remark}
+                Let $X:\Omega \rightarrow E$ a r.v. and let $A \subset E$; \\ then $\mathbb{P}_X(A)=\mathbb{P}(x \in A)= \displaystyle\sum_{a \in X}\mathbb{P}(x=a)$.
+
+                \noindent In particular,
+
+                \centerline{$\displaystyle\sum_{x\in E}\mathbb{P}(X=x) = \mathbb{P}_X (E) =1$}
+
+                \vspace{5pt}
+
+                \noindent thus, the law $\mathbb{P}_X$ of $X$ is characterized by the family $(\mathbb{P}(X=x))_{x\in E}$
+
+                \vspace{5pt}
+
+                \noindent$\bigstar$ this is not true for continuous probabilities (i.e. if $\Omega$ is not a countable set)
+
+        \subsection{Usual laws}
+            \subsubsection{(a) Uniform law (or distribution)}
+                Let $X:\Omega\rightarrow E$ (with E finite); we say that $X$ follows a uniform distribution if for all $x\in E, \mathbb{P}_X(x)=\mathbb{P}(X=x)=\frac{1}{\# E}$.
+
+            \subsubsection{(b) Bernoulli distribution}
+                Let $X: \Omega \rightarrow \{0,1\}$ and let $p \in [0,1]$. We say that $X$ follows a \textbf{Bernoulli law} with parameter $p (X \sim \mathcal{B}(p))$ if $\mathbb{P}(X=1)=p$ and $\mathbb{P}(X=0)=1-p$.
+
+            \vspace{20pt}
+
+            \subsubsection{(c) Binomial distribution}
+                Let $n\geq 1$, and $p\in [0,1]$. Let $X:\Omega \rightarrow \{0,1,...,n\}$. We say that $X$ follows a binomial law with parameters $(n,p)$ (write $X\sim \mathcal{B}(n,p)$) if for $0\leq k\leq n,$
+
+                \vspace{5pt}
+
+                \centerline{$\mathbb{P}(X=k)=\left(\begin{array}{c} n \\ k_1,...,k_p \end{array}\right) p^k (1-p)^{n-k}$}
+
+            \subsubsection{Remark}
+                $\mathcal{B}(n,p)$ is the law of the number of success in n independent and identical successive Bernoulli experiments with probability p of success (i.e. $\mathcal{B}(p)$ law.
+
+                In this case, we have $\Omega=\{0,1\}^n$ and the expression ($\ast$) may be simplified to
+
+                \centerline{$\mathbb{P}(\{(\omega_1,...,\omega_n)\}) = \displaystyle\prod_{i=1}^n p^{\omega_i} (1-p)^{1-\omega_i}$}
+
+                if $0 < p < 1$.
+
+        \subsection{Joint distribution}
+            \subsubsection{Definition}
+                Note that if $X:\Omega\rightarrow E$ and $Y:\Omega\rightarrow F$ are random variables, then
+                $\begin{array}{cc}
+                    (X,Y): & \Omega\rightarrow E\times F \\
+                           &\omega\mapsto (X(\omega), Y(\omega))
+                \end{array}$ is also a r.v.
+
+                \vspace{5pt}
+
+                Then, the law of $(X,Y), \mathbb{P}_{(X,Y)}$, is called the joint law of X and Y.
+
+            \subsubsection{Remark}
+                If we know the law of the r.v. (X,Y), we can recover the laws of X and Y, indeed, for all $x\in E$,
+
+                \vspace{5pt}
+
+                \centerline{$\mathbb{P}(X=x)=\displaystyle\sum_{y\in F} \mathbb{P}((X,Y)=(x,y))$}
+
+                and $\forall y \in F$,
+
+                \centerline{$\mathbb{P}(Y=y)=\displaystyle\sum_{x\in E} \mathbb{P}((X,Y)=(x,y))$.}
+
+                \vspace{5pt}
+
+                The laws of X and Y are called the marginal laws of the r.v. (X,Y).
+
+                \vspace{5pt}
+
+                $\bigstar$ the converse is not true in general, i.e. we cannot in general know the law $\mathbb{P}_{(X,Y)}$ of (X,Y) if we know only $\mathbb{P}_X$ and $\mathbb{P}_Y$.
+
+        \subsection{Independence}
+            \subsubsection{Definition}
+                Let $X_1: \Omega \rightarrow E_1,..., X_n:\Omega\rightarrow E_n$ be r.v. They are called independent if $\forall (x_1,...,x_n) \in E_1\times...\times E_n$,
+
+                \vspace{5pt}
+                
+                \centerline{$\mathbb{P}(X_1=x_1,...,X_n=x_n) = \mathbb{P}(X_1=x_1)...\mathbb{P}(X_n=x_n)$.}
+
+            \subsubsection{Remark}
+                    \indent $\bullet$ if $X_1,...,X_n$ are $\coprod$, any subfamily $X_{x_1},...,X_{i_m}$ is independent \\
+                    $\bullet$ if $X_1,...,X_n, Y_1,...,Y_m$ are independent, then $X=(X_1,...,X_n) \coprod Y=(Y_1,...,Y_m)$
+
+            \subsubsection{Theorem 1: Composition principle}
+                Let $X:\Omega \rightarrow E, Y:\Omega F$ be independent r.v. let $f:E\rightarrow E\prime$ and $g:F\rightarrow F\prime$ be two functions; then $f(X) \coprod f(Y)$.
+
+            \subsubsection{Theorem 2: Coalition principle}
+                Let $X_1,...,X_n, Y_1,...,Y_m$ be an independent family of r.v. Then for any functions f and g, $f(X_1,...,X_n)$ and $g(Y_1,...,Y_m)$ are independent.
+
+            \subsubsection{Theorem 3}
+                If $X_1:\Omega\rightarrow E_1,...,X_n:\Omega \rightarrow E_n$ are independent random variables, and if $A_1\subset E_1,...,A_n\subset E_n$, then the family $(\{X_i\in A_i\})_{1\leq i \leq n}$ is an independent family of events.
+
+            \subsubsection{Remark}
+                In all what we have defined, the assumption "$\Omega$ is finite" could have been replaced by "$\Omega$ is finite countable". In this case, $\Omega = \{\omega_k, k\in \mathbb{N}\}$ and probability $\mathbb{P}$ on $\Omega$ is again an application $\mathbb{P}: \mathcal{P}(\Omega)\rightarrow [0,1]$ satisfying $\mathbb{P}(\Omega)=1$ and the additivity condition.
+
+                If $p_k=\mathbb{P}(\{\omega_k\})$, we then have $\sum_{k=0}^{+\infty}p_k=1$, so $(p_k)_{k\geq 0}$ is a convergent series; conversely, $\mathbb{P}$ is uniquely defined by such a convergent series of positive numbers $p_k\in [0,1]$.
+
+                Note that, in particular, $p_k\xrightarrow[]{k\rightarrow +\infty}0$

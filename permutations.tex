@@ -1,0 +1,111 @@
+\section{Permutations}
+
+        \subsection{Definitions}
+            \subsubsection{Prop}
+                (1) $\forall \sigma,\pi \in \sigma_n, \sigma\circ\pi\in\sigma_n$ and $\pi\circ\sigma\in\sigma_n$
+
+                \vspace{4pt}
+
+                \noindent(2) $\forall \sigma,\pi,\tau\in\sigma_n, (\sigma\circ\pi)\circ\tau=\sigma\circ (\pi\circ\tau )$, and is denoted by $\sigma\circ\pi\circ\tau$ \\ (recall that $\sigma\circ\pi$ is defined by $\sigma\circ\pi (j)=\sigma (\pi (j))$ for $j\in\{1,...,n\}$).
+
+                \vspace{4pt}
+
+                \noindent(3) $\forall \pi\in\sigma_n, Id_n\circ\pi=\pi\circ Id_n = \pi$
+
+                \vspace{4pt}
+
+                \noindent(4) $\forall \pi\in\sigma_n, \pi^{-1}\pi=\pi\circ\pi^{-1}=Id_n$
+
+                \vspace{4pt}
+
+                \noindent(5) $card\,\sigma_n = n!$
+
+            \subsubsection{Corollary}
+                For any integer $n\geq 1, (\sigma_n, \circ)$ is a group. Note that it is non Abelian if $n \geq 3$.
+
+        \subsection{Cycles}
+            \subsubsection{Definition}
+                Let $p, 2\leq p \leq n$; then a p-cycle in $\sigma_n$ is a permutation $\sigma\in\sigma_n$ such that $\exists x_1,...,x_p\in\{1,...,n\}$ with $x_i\neq x_j$ for $i\neq j$ and with:
+                \vspace{4pt}
+
+                $\bullet$ $\sigma (x_i) = x_{i+1}$ if $i\in\{1,...,p-1\}$
+
+                \vspace{2pt}
+
+                $\bullet$ $\sigma (x_p) = x_1$
+
+                \vspace{2pt}
+
+                $\bullet$ $\sigma (k) = k$ if $k \notin\{x_1,...,x_p\}$
+                \vspace{4pt}
+
+                The set $\{x_1,...,x_p\}$ is called the support of the cycle, and is denoted $supp\,\sigma$ (or $S_\sigma)$. We use the notation $(x_1,...,x_p)$ for a shorthand.
+
+            \subsubsection{Lemma}
+                Let $\sigma, \tau\in \sigma_n$ and suppose that $\sigma$ and $\tau$ are cycles with disjoint supports. Then $\sigma\circ\tau=\tau\circ\sigma$.
+
+            \newpage
+            \subsubsection{Factorization theorem}
+                Any permutation $\sigma\in\sigma_n$ may be factorized (or decomposed) as the (possibly empty) product of cycles with disjoint supports, in a unique way, up to the order of the cycles.
+
+            \subsubsection{Lemma}
+                Let $\sigma\in\sigma_n$ and let $k\in\{1,...,n\}$. Then $\exists p, 1\leq p\leq n$ such that
+
+                \vspace{4pt}
+
+                \centerline{$\sigma^p (k) = \underbrace{\sigma\circ...\circ\sigma}_{\text{p times}}(k)=k$}
+
+            \subsubsection{Remark}
+                The number of $n$ cycles in $sigma_n$ is equal to $\frac{n!}{n}=(n-1)!$. Indeed, the number of n-tuples of the form $(x_1,...,x_n)$ with $\{x_1,...,x_n\}=\{1,...,n\}$ is $n!$ and there are n different n-tuples corresponding to the same cycle.
+
+        \subsection{Transpositions}
+            \subsubsection{Definition}
+                A transposition $\tau_{ij}\in\sigma_n$ is a 2-cycle $\tau_{ij}=(i,j)$, where $i,j\in\{1,...,n\}^2$ and $i<j$ i.e. 
+                
+                $\tau_{ij}=\left(\begin{array}{cc}
+                    1 \; 2\; ...\; i-1\;\mathbf{i}\; i+1\; ... \; j-1 \;\mathbf{j}\; j+1\; ...\; n \\
+                    1 \; 2\; ...\; i-1 \;\textbf{j}\; i+1\; ...\; j-1 \;\textbf{i}\; j+1\; ...\; n
+                \end{array}\right)
+                $
+
+            \subsubsection{Prop}
+                (1) There are $\left(\begin{array}{cc} n \\ 2 \end{array}\right)$ transpositions in $\sigma_n$
+
+                \noindent (2) If $\tau_{ij}\in\sigma_n$ is a transposition, then $\tau^2_{ij}=Id_n$
+
+            \subsubsection{Theorem}
+                Any permutation of $\sigma_n$, with $n\geq 2$, may be decomposed as a product of transpositions (not uniquely, and not with disjoint supports). We say that transpositions generate $\sigma_n$.
+
+        \newpage
+
+        \subsection{Signature}
+            \subsubsection{Definition}
+                $\bullet$ For $\sigma\in\sigma_n$, and $(i,j)\in\{1,...,n\}^2$ with $i<j$, we say that $(i,j)$ is an inversion for $\sigma$ if $\sigma(i)>\sigma(j)$
+
+                \noindent$\bullet$ The number of inversions of $\sigma$ is denoted $I(\sigma)$ the signature of $\sigma$ is $\varepsilon(\sigma)=(-1)^{I(\sigma)}$. Note that $\varepsilon(\sigma)\in\{-1,1\}$
+
+                \noindent$\bullet$ Let $\sigma\in\sigma_n$; if $\varepsilon(\sigma)=1, \sigma$ is called an even permutation, while it is an odd permutation if $\varepsilon(\sigma)=-1$
+
+            \subsubsection{Theorem}
+                Let $\tau, \sigma\in\sigma_n$ be two permutations. Then $\sigma(\tau\circ\sigma)=\varepsilon(\tau)\varepsilon(\sigma)$
+
+            \subsubsection{Corollary}
+                (1) Let $\tau\in\sigma_n$ be a transposition. Then $\varepsilon(\tau)=-1$
+
+                \vspace{4pt}
+
+                \noindent(2) If $\sigma=\tau_1\circ...\circ\tau_N\in\sigma_n$, with $\tau_i, 1\leq i\leq N$ transpositions, then $\varepsilon(\sigma)=(-1)^N$. In particular, although the decomposition of $\sigma$ as a product of transpositions is not unique, the parity of the number N of transpositions is unique.
+
+                \vspace{4pt}
+
+                \noindent(3) If $\sigma\in\sigma_n$ is a p-cycle, then $\varepsilon(\sigma)=(-1)^{p-1}$
+
+            \subsubsection{Corollary}
+                (1) $\varepsilon:\sigma_n\rightarrow\{-1,1\}$ is a group morphism from $(\sigma_n, \circ)$ into $(\{-1,1\}, \times)$
+
+                \vspace{4pt}
+
+                \noindent(2) $\#\{\sigma\in\sigma_n, \varepsilon(\sigma)=-1\}=\#\mathcal{A}_n$ for $n\geq 2$
+
+            \subsubsection{Remark}
+                Since $\#\sigma_n=n!=\#\mathcal{A}_n+\#\{odd perm\}$ we deduce from a previous Corollary that $\#\mathcal{A}_n=\frac{n!}{2}$ (for $n\geq 4$).

@@ -1,0 +1,102 @@
+\section{Independence and conditional probabilities}
+        \subsection{Independence of two events}
+            \subsubsection{Definition}
+                Let $A,B$ be two events in a probability space $(\Omega, \mathbb{P})$; $A$ and $B$ are independent if $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$. We denote $A\coprod B$.
+
+            \vspace{5pt}
+
+            $\bigstar$ this is different from incompatibility!
+
+            \subsubsection{Remark}
+                If $\mathbb{P}$ and $\mathbb{Q}$ are two possibilities on the same space $\Omega$, then events may be independent for $\mathbb{Q}$ and not for $\mathbb{P}$: \\ consider for example $\mathbb{Q}$ defined on $\Omega=\{1,2,...,6\}^2$ by $\mathbb{Q}(\{(i,j)\})=q_{ij}$ with $q_{ij}=0$ if $j\neq 6$, and $q_{i6}=\frac{1}{6}$. Then $q_{ij}\in[0,1]$ and $\displaystyle\sum_{i,j=1}^6 q_{i,j} = \sum_{i=1}^6 q_{i6}=1$, so $\mathbb{Q}$ is a probability on $\Omega$ by a theorem from the previous chapter.
+                \\
+                \\
+                Now we take C and D be the events in the previous example. Now,
+                
+                \vspace{5pt}
+                
+                \centerline{$\mathbb{Q}(C)=\displaystyle\sum_{i=1}^6 \mathbb{Q}(\{(i,j)\}) = \sum_{i=1}^6 q_{1j}=\frac{1}{6}$}
+                
+                \noindent and
+
+                \vspace{5pt}
+                
+                \centerline{$\mathbb{Q}(D)=q_{12}+q_{21}=0$, while $\mathbb{Q}(C\cap D)=q_{12}=0=\mathbb{Q}(C)\mathbb{Q}(D)$.}
+
+                \vspace{5pt}
+                
+                \noindent So C and D are independent for $\mathbb{Q}$.
+
+            \subsubsection{Remark}
+                Imagine that we repeat a random experiment, independently, a large number N times. Calling $N_A$ the number of times the event A is realized, and $N_B$ the number of times the event B is realized, we may expect that $\mathbb{P}(A)\sim\frac{N_A}{N}$ and $\mathbb{P}(B)=\frac{N_B}{N}$. \\
+                \newpage
+                The fact that A and B are independent means that A and B occur independently one from the other, i.e. knowing that B has occurred does not give you any information on the occurrence of A: $\mathbb{P}=\frac{N_{A\cap B}}{N_B}$ then
+
+                \vspace{5pt}
+
+                \centerline{$\mathbb{P}(A\cap B)\sim\frac{N_{A\cap B}}{N}=\frac{N_{A\cap B}}{N_B}\frac{N_B}{N}\sim\mathbb{P}(A)\mathbb{P}(B)$}
+
+            \subsubsection{Prop}
+                Let A,B be two events in a probability space $(\Omega, \mathbb{P})$. If A and B are independent, then A and $\overline{B}$  are also independent.
+
+        \subsection{Independence of a family of events}
+            \subsubsection{Definition}
+            Let $A_1,...,A_n$ be n events in a probability space $(\Omega, \mathbb{P})$. The family $(A_i)$ is independent if for all integers $m$ $1\leq i \leq n$ with $q \leq m \leq n$, and for all $i_1,...,i_m$ such that $i \leq i_1 < i_2 < ... <i_m \leq n$,
+
+            \vspace{5pt}
+            
+            $\mathbb{P}(A_{i_1} \cap ... \cap A_{i_m}) = \mathbb{P}(A_{i_1})...\mathbb{P}(A_{i_m})$ i.e. 
+
+            \vspace{5pt}
+            
+            $\mathbb{P}(\bigcap_{k=1}^n A_{i_k}) = \prod_{k=1}^m \mathbb{P}(A_{i_k})$.
+
+            \vspace{5pt}
+
+            $\bigstar$ Independence is different from pairwise independence.
+
+        \subsection{Conditional probabilities}
+            A conditional probability is a probability which, to an event, associates the probability that this events occurs, knowing that another event has occurred.
+
+            \subsubsection{Definition}
+                Let $A,B$ be two events in a probability space $(\Omega, \mathbb{P})$, and assume $\mathbb{P}(B)\neq 0$.
+
+                \vspace{5pt}
+
+                \centerline{We define $\mathbb{P}(A | B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$.}
+
+                \vspace{5pt}
+
+                $\bigstar$ this is a notation, $A|B$ is not an event!
+
+            \subsubsection{Remark}
+                If $\mathbb{P} \neq 0$, then $A$ and $B$ are independent if and only if $\mathbb{P}(A|B) = \mathbb{P}(A)$.
+
+            \subsubsection{Theorem}
+                Let $B$ be an event in a probability space $(\Omega, \mathbb{P})$. Then 
+                \begin{align*} 
+                \mathbb{P}_B\colon \mathcal{P}(\Omega) & \rightarrow \mathbb{R}^+ \\[-1ex]
+                A & \mapsto \mathbb{P}(A|B)
+                \end{align*}
+                is a probability on $\Omega$, called the conditional probability knowing $B$.
+
+        \subsection{Compound probability theorem}
+            \subsubsection{Theorem}
+                Let $A_1,...,A_n \subset \Omega$ be events on the probability space $(\Omega, \mathbb{P})$ such that \\ $\mathbb{P}(A_1 \cap ... \cap A_{n-1}) > 0$; then
+
+                \begin{align*}
+                    \mathbb{P}(A_1 \cap ... \cap A_n) & = \mathbb{P}(A_1)\mathbb{P}(A_2|A_1)\mathbb{P}(A_3|A_1\cap A_2)...\mathbb{P}(A_n|A_1\cap ... \cap A_{n-1}) \\
+                    &= \prod_{k=1}^n \mathbb{P}(A_k|A_0\cap...\cap A_{k-1})
+                \end{align*} with $A_0=\Omega$.
+
+            \vspace{5pt}
+
+            $\bigstar$ This is a general formula, no assumption was made on the independence of the events. If the family $(A_i)_{1\leq i \leq n}$ is independent, we recover the formula $\mathbb{P}(A_1\cap...\cap A_n) = \displaystyle\prod_{k=1}^n \mathbb{P}(A_k)$.
+
+            \subsection{Law of total probabilities}
+                \subsubsection{Theorem}
+                    Let $(\Omega, \mathbb{P})$ be a finite probability space and let $(A_i)_{1\leq i \leq n}$ be a partition of $\Omega$; assume that $\mathbb{P}(A_i) > 0$ for $i=1,...,n$. Then $\forall B \subset \Omega$,
+
+                    \vspace{5pt}
+
+                    \centerline{$\mathbb{P}(B) = \displaystyle\sum_{i=1}^n\mathbb{P}(A_i\cap B) = \sum_{i=1}^n\mathbb{P}(B|A_i)\mathbb{P}(A_i)$}

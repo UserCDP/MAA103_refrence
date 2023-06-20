@@ -1,0 +1,54 @@
+\section{Graphs and trees}
+        \subsection{Definitions}
+            \subsubsection{Definition of a graph}
+                A graph is a pair $G=(V,E)$ of sets, with $V\neq\varnothing$ and E is a set of two elements subsets of V, i.e $E \subset \{\{x,y\}, x,y\in V, x\neq y\}$. The elements of V are called \textbf{vertices (or nodes)} and the elements of E are called \textbf{edges} (represent the links between the vertices).
+
+            \subsubsection{Definition}
+                Let $G=(V,E)$ be a graph \\
+                $\bullet$ For $u,v\in V, u\neq v$, we say that u and v are \textbf{neighbours (or adjacent)} if $\{u, v\}\in E$; we denote $u\sim v$ \\
+                $\bullet$ If $e=\{u,v\}\in E$, we say that u and v are \textbf{endpoints} of e\\
+                $\bullet$ If $u \in V$, then $d(u)$, the \textbf{degree} of u, is its number of neighbours
+
+            \subsubsection{Prop}
+                Let $V=(G,E)$ be a graph, then $\displaystyle\sum_{v\in V}d(v)=2\,card E$.
+
+        \subsection{Connected graphs}
+            \subsubsection{Definition}
+                Let $G=(V,E)$ be a graph \\
+                $\bullet$ For $u,v\in V$, a path from u to v is a sequence $x_0,...,x_n\in V$ such that $x_0=u,x_n=v$ and $\{x_k,x_{k+1}\}\in E$ for $k=0,...,n-1 (i.e. x_k\sim x_{k+1}$ for $k=0,...,n-1$).
+
+                \noindent$\bullet$ If, for every $u,v\in V$, there exists a path from u to v, we say that the graph G is connected. By convention, a graph with one vertex (i.e. $E=\varnothing$ and $card\, V=1$) is connected.
+
+            \subsubsection{Theorem}
+                Let $G=(V,E)$ be a connected graph with $card\, V=n$; then $card\, E\geq n-1$.
+
+            \subsubsection{Prop}
+                Let $G=(V,E)$ be a graph and define the binary relation $\mathfrak{R}$ on V by $u\mathfrak{R}v$ if $u=v$ or if there is a path from u to v. \\ Then $\mathfrak{R}$ is an equivalence relation on V.
+
+            \subsubsection{Definition}
+                Let $G=(V,E)$ be a graph. A connected component of G is the subgraph of G introduced on an equivalence class of V for the above equivalence relation i.e. $G'=(V',E')$, where $V' \subset V$ is an equivalence class of $\mathfrak{R}$ and $E'=\{\{u,v\}\in E | u\in V' \: and\: v\in V'\}$.
+
+            \subsubsection{Remark}
+                A connected component is necessarily a connected graph.
+
+        \subsection{Trees}
+            \subsubsection{Definition}
+                $\bullet$ Let $G=(V,E)$ be a graph; a cycle in G is a path $x_0,x_1,...,x_n$, with $n\geq 2$, such that $x_i\sim x_j$ for $i\neq j$ \\
+                $\bullet$ A tree is a connected graph without cycle
+
+            \subsubsection{Theorem}
+                Let $G=(V,E)$ be a connected graph with $card\,V=n\geq 1$. Then G is a tree if and only if $card\, E=n-1$.
+
+            \subsubsection{Theorem (Cayley, 1889)}
+                There are $n^{n-2}$ trees $G=(V,E)$ such that $card\,V=n$.
+
+        \newpage
+
+        \subsection{Minimal factorization of a cycle}
+            Let $n\geq 2$ and $c=(1,...,n)$ be an n-cycle in $\sigma_p$ with $p\geq n$. WE know that $c$ may be decomposed as a product of transpositions.
+
+            \subsubsection{Prop}
+                If $c=\tau_k\circ\tau_{k-1}\circ...\circ\tau_1$, where $\tau_i$ are transpositions, then $k\geq n-1$.
+
+            \subsubsection{Theorem (Denis)}
+                There are $n^{n-2}$ decompositions of the cycle (1,...,n) into product of n-1 transpositions.

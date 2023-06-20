@@ -1,0 +1,58 @@
+\section{Arithmetic in $\mathbf{Z}$}
+		\subsection{Euclidean division}
+			\subsubsection{Theorem (Euclidean division)}
+				Let $a,b \in \mathbf{Z}$ with $b \neq 0$. There exists \textbf{a unique} pair $(a,r) \in \mathbf{Z} \times \mathbf{Z}$ such that $a=bq+r$, and $0\leq r$\textless $|b|$. \textit{q=quotient, r=remainder}
+				
+		\subsection{Equivalence relations}
+			\subsubsection{Definition (binary relation)}
+				Let $S$ be a set. A binary relation $\mathfrak{R}$ is a subset of $S \times S = \{(a,b); a,b \in S \}$. We usually write $a \mathfrak{R} b$ or $a \sim b$ for $(a,b) \in \mathfrak{R}$.
+				
+			\subsubsection{Definition (equivalence relation)}
+			A binary relation $\mathfrak{R}$ on $S$ is an \textbf{equivalence relation} if it is
+			
+				$\bullet$ \textbf{reflexive}: $\forall x \in S, x\mathfrak{R}x$
+    
+                $\bullet$ \textbf{symmetric}: $\forall x,y \in S$, if $x\mathfrak{R}y$ then $y\mathfrak{R}x$
+
+                $\bullet$ \textbf{transitive}: $\forall x,y,z \in S, (x\mathfrak{R}y$ and $y\mathfrak{R}z) \Rightarrow x\mathfrak{R}z$
+				
+			\subsubsection{Definition (equivalence class)}
+            $S$ set, $\sim$ equivalence relation on $S$. Given $x\in S$, the equivalence class of $x$ is the subset $[x]=\{y\in S, y \sim x \}$.
+            We call $x$ a \textbf{representative} of $[x]$.
+
+            \subsubsection{Lemma}
+            Let $S$ be a set and $\mathfrak{R}$ an equivalence relation on $S$. Then the equivalence classes form a partition of $S$, 
+
+            \vspace{5pt}
+            \centerline{$S=\displaystyle\bigcup_{x\in S} [x]$ and if $[x_1] \neq [x_2]$, then $[x_1] \cap [x_2] = \varnothing$}
+
+            \subsubsection{Theorem (Euclid's lemma)}
+            Let $a,b\in\mathbb{Z}$ and $p$ a prime number. Then, if $p$ divides $ab$, $p$ divides either $a$ or $b$.
+
+            \subsubsection{Theorem (fundamental theorem of arithmetic}
+            Every integer $n \geq 2$ can be uniquely written as $n=p_1^{\alpha_1}...p_r^{\alpha_r}$, where $p_i$, $i=1,...,r$ are prime numbers in increasing order, and $\alpha_i \geq 1$ are integers. We call this product \textbf{the decomposition of n into prime factors}.
+
+            \subsubsection{Definition (p-adic valuation)}
+            Let $p \geq 2$ a prime number. For $n\in\mathbb{Z}$ we define $v_p(n)$ as:
+
+            $\bullet$ $v_p(0)=+\infty, v_p(1)=0$
+            
+            $\bullet$ $v_p(-n)=v_p(n)$
+            
+            $\bullet$ for $n\geq 2, v_p(n)$ is the exponent of $p$ in the decomposition of $n$ into prime factors.
+
+            \subsubsection{Theorem (Euclid)}
+            There exist infinitely many prime numbers.
+
+            \subsection{Greatest common divisor}
+            \subsubsection{Theorem (Bezout)}
+            Let $a,b\in\mathbb{Z}$ with $a\neq 0$ or $b\neq 0$; then $\exists (u,v)\in\mathbb{Z}\times\mathbb{Z}$ such that \\ $gcd(a,b)=au + bv$. In particular, if $a$ and $b$ are coprime, $\exists (u,v)\in\mathbb{Z}\times\mathbb{Z}$ such that $au+bv=1$.
+            
+            \subsubsection{Prop}
+            Let $a,b \in \mathbb{N}^*$ and let $r=a\cdot mod(b)$ be the remainder of Euclidean division of $a$ by $b$. Then $gcd(a,b)=gcd(b,r)$.
+            
+            \subsubsection{Euclid's algorithm}
+            Let $a,b \in \mathbb{N}^*$. Take $r_0=b, r_1=a\cdot mod(b)$; while $r_k\neq 0$, let \\ $r_{k+1}=r_{k-1}\cdot mod(r_k)$. Then $0\leq r_{k+1}$\textless $r_k$ so the algorithm stops and if $r_n=0$, then $gcd(a,b)=r_{n-1}$.
+            
+            \subsubsection{Prop}
+            Euclid's algorithm stops in at most $n=2log_2(b)$ steps.

@@ -1,0 +1,50 @@
+\section{Binomial and multinomial coefficients}
+        \subsection{Binomial coefficients}
+            \subsubsection{Pascal theorem}
+                For any integers $n \geq 1, \: 0 \leq k \leq n,$
+
+                \vspace{6pt}
+
+                \centerline{$
+                    \left( \begin{array}{c} n \\ k \end{array} \right) =
+                    \left( \begin{array}{c} n-1 \\ k-1 \end{array} \right) +
+                    \left( \begin{array}{c} n-1 \\ k \end{array} \right)
+                $}
+
+            \subsubsection{Binomial formula}
+                Let $a,b \in \mathbb{R}, n \in \mathbb{N}$, then
+
+                \centerline{$(a+b)^n = \displaystyle\sum^n_{k=0} \left( \begin{array}{c} n \\ k \end{array} \right) a^k \, b^{n-k}$}
+
+        \subsection{Multinomial coefficients}
+            For any integer $p \geq 1, \forall a_1, ..., a_p \in \mathbb{R}, \forall n \in \mathbb{N}$,
+
+            \vspace{6pt}
+            
+            \centerline{$
+                (a_1+...+a_p)^n = \displaystyle\sum_{\begin{array}{c} 0\leq k_i \leq n \\ 1 \leq i \leq p \\ k_1 +...+k_p=n \end{array}}
+                \frac{n!}{k_1!...k_p!} \, a_1^{k_1}...a_p^{k_p}
+            $}
+
+            \subsubsection{Definition}
+                The term $\frac{n!}{k_1!...k_p!}$ is called a multinomial coefficient and denoted 
+                $\left( \begin{array}{c}
+                    n \\ k_1, k_2,...,k_p
+                \end{array} \right)$.
+
+            \subsubsection{Remark}
+                For $n\geq 1, \: 0 \leq k_i \leq n, \: 1 \leq i \leq p$ with $k_1+...+k_p=n$, $\left( \begin{array}{c}
+                    n \\ k_1, k_2, ..., k_p
+                \end{array} \right)$ is the number of "words" of length $n$ that one can form with an alphabet of $p$ letters, such that letter 1 is repeated $k_1$ times,..., letter $p$ is repeated $k_p$ times.
+
+            \subsubsection{Theorem}
+                For all $n \geq 1, \: p \geq 1, k_1,...,k_p$ such that $0\leq k_i \leq n$ and $k_1+...+k_p = n$, we have
+                
+                \vspace{6pt}
+                
+                \centerline{$
+                    \left( \begin{array}{c} n \\ k_1,...,k_p \end{array} \right) = 
+                    \left( \begin{array}{c} n-1 \\ k_1 -1,k_2, ..., k_p \end{array} \right) +
+                    \hdots +
+                    \left( \begin{array}{c} n-1 \\ k_1, k_2, ..., k_p -1 \end{array} \right)
+                $}

@@ -1,0 +1,78 @@
+\section{Expectation and variance}
+        When a random variable takes numerical values, we may ask what is the expected value (average or mean value), and how the r.v. spreads around that value (variance).
+
+        Again, in the whole chapter, $(\Omega, \mathbb{P})$ is a finite probability space.
+
+        \subsection{Definition}
+            Let $X:\Omega\rightarrow\mathbb{R}$ be a random variable. The expectation (or expected value) of X is $\mathbb{E}(X) = \displaystyle\sum_{\omega\in\Omega} X(\omega)\mathbb{P}(\{\omega\})$.
+
+            \vspace{5pt}
+
+            Note that $\mathbb{E}(X)\in\mathbb{R}$ and depends on the probability $\mathbb{P}$.
+
+        \subsection{Theorem}
+            Let $X:\Omega\rightarrow\mathbb{R}$ and let $\mathbb{P}_X$ be the law of X; then
+
+            \vspace{5pt}
+
+            \centerline{$\mathbb{E}(X)=\displaystyle\sum_{x\in X(\Omega)} x \mathbb{P}_X(\{x\}) = \sum_{x\in X(\Omega)} x\mathbb{P}(X=x)$}
+
+        \subsection{Theorem (linearity of expectation)}
+            Let $X,Y:\Omega\rightarrow\mathbb{R}$ be two r.v and let $\delta, \mu\in\mathbb{R}$. Then
+
+            \vspace{5pt}
+
+            \centerline{$\mathbb{E}(\delta X+\mu Y) = \delta\mathbb{E}(X) + \mu \mathbb{E}(Y)$.}
+
+        \subsection{Prop (generalization)}
+            Let $X_i:\Omega \rightarrow\mathbb{R}$ be random variables, and $\delta_i\in\mathbb{R}$, for $i=1,...,n$; then
+
+            \vspace{5pt}
+
+            \centerline{$\mathbb{E}(\displaystyle\sum_{k=1}^n\delta_k X_k) = \sum_{k=1}^n \delta_k \mathbb{E}(X_k)$.}
+
+        \subsection{Prop}
+            Let $X,Y:\Omega\rightarrow\mathbb{R}$. If X and Y are independent, then $\mathbb{E}(XY)=\mathbb{E}(X)\mathbb{E}(Y)$.
+
+            \vspace{5pt}
+
+            $\bigstar$ the converse is not true!!
+
+        \subsection{Corollary}
+            Let $X,Y:\Omega\rightarrow\mathbb{R}$ and let $f,g:\mathbb{R}\rightarrow\mathbb{R}$ be two functions. Then if $X\coprod Y$, we have $\mathbb{E}(f(X)g(X)) = \mathbb{E}(f(X))\mathbb{E}(g(Y))$.
+
+        \subsection{Definition}
+            Let $X:\Omega\rightarrow\mathbb{R}$ be a r.v. The variance of X is defined as \\ $Var(X) = \mathbb{E}((X-\mathbb{E}(X))^2)$
+
+        \subsection{Remark}
+        $Var(X)=\displaystyle\sum_{x\in X(\Omega)} (x-\mathbb{E}(X))^2\mathbb{P}(X=x)\geq 0$.
+
+        \subsection{Prop}
+            $Var(X)=\mathbb{E}(X^2) - (\mathbb{E}(X))^2$
+
+        \subsection{Corollary}
+            Let $X:\Omega\rightarrow\mathbb{R}$ be a r.v. Then $\mathbb{E}(X^2)\geq (\mathbb{E}(X))^2$.
+
+        \subsection{Remark}
+            $\bullet$ We may either write
+
+                \centerline{$\mathbb{E}(X^2) = \displaystyle\sum_{x\in X(\Omega)} x^2\mathbb{P}(X=x)$}
+
+            \noindent or
+
+                \centerline{$\mathbb{E}(X^2) = \displaystyle\sum_{y\in X^2(\Omega)} x^2\mathbb{P}(X^2=y)$}
+
+                \vspace{5pt}
+
+            \noindent $\bullet$ If $X:\Omega\rightarrow E$ is a r.v. and $A\subset E$, then $\mathds{1}_A(X)$ is a r.v. $\Omega\rightarrow\{0,1\}$ with $\mathds{1}_A(X)(\omega)=\begin{cases}
+                    1 \: \text{if} \: X(\omega)\in A \\
+                0 \: \text{otherwise}
+            \end{cases}$
+
+            \vspace{5pt}
+
+            \noindent Moreover, we have 
+
+            \vspace{5pt}
+
+            \centerline{$\mathbb{E}(\mathds{1}_A(X)) = \displaystyle\sum_{\omega/X(\omega)\in A} 1 - \mathbb{P}(\{\omega\}) = \sum_{x\in A} \mathbb{P}(X=x) = \mathbb{P}(X\in A) $}
